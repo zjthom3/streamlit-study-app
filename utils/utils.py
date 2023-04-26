@@ -20,7 +20,11 @@ def generate_quiz(selected_option: str) -> None:
             submitted = st.form_submit_button("Submit")
         if submitted:
             st.write("Quiz Submitted!")
+            quiz_data = {}
             num_correct = 0
+            with open("static/user_data.json", "r") as json_file:
+                data = json.load(json_file)
+                quiz_data = data
             # iterate over each question and print the selected choice
             for i, question in enumerate(SECTIONS[selected_option]["quiz_questions"]):
                 selected = st.session_state[f"question_{i}"]
@@ -32,17 +36,23 @@ def generate_quiz(selected_option: str) -> None:
                     num_correct += 1
                 else:
                     st.write(question["explanation"])
+
+                # update json file
+                if selected_option not in quiz_data:
+                    quiz_data[selected_option] = {}
+
+                if selected not in quiz_data[selected_option]:
+                    quiz_data[selected_option][selected] = 0
+                else:
+                    quiz_data[selected_option][selected] += 1
             # show the final score
-            quiz_data = st.write(
+            st.write(
                 f"Final score: {num_correct}/{len(SECTIONS[selected_option]['quiz_questions'])}"
             )
 
-            with open('../static/user_data.json', 'r') as json_file:
-                data = json.load(json_file)
-            
-            data['username'] = quiz_data
+            data = quiz_data
 
-            with open('../static/user_data.json', 'w') as json_file:
+            with open("static/user_data.json", "w") as json_file:
                 json.dump(data, json_file)
 
 

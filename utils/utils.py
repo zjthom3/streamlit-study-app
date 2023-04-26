@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+import json
 
 from utils.constants import SECTIONS
 
@@ -32,9 +33,17 @@ def generate_quiz(selected_option: str) -> None:
                 else:
                     st.write(question["explanation"])
             # show the final score
-            st.write(
+            quiz_data = st.write(
                 f"Final score: {num_correct}/{len(SECTIONS[selected_option]['quiz_questions'])}"
             )
+
+            with open('../static/user_data.json', 'r') as json_file:
+                data = json.load(json_file)
+            
+            data['username'] = quiz_data
+
+            with open('../static/user_data.json', 'w') as json_file:
+                json.dump(data, json_file)
 
 
 # UNDER CONTRUCTION

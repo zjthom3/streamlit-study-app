@@ -2,7 +2,8 @@
 Analytics mode
 - add the slug [?analytics=on] to the site's URL to unlock this cool feature!
 
-
+Access user data
+- paste [https://getsmart.streamlit.app/app/static/user_data.json] into browser!
 
 [![Preview][share_img]][share_link]
 

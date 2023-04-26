@@ -13,17 +13,17 @@ st.write(
 )
 
 # Add the first video
-# with elements("video1"):
-#     html.iframe(
-#         src="https://platform.thinkific.com/videoproxy/v1/play/c80no3h69ueleahijou0",
-#         width="710",
-#         height="400",
+with elements("video1"):
+    html.iframe(
+        src="https://platform.thinkific.com/videoproxy/v1/play/c80no3h69ueleahijou0",
+        width="710",
+        height="400",
 
-#     )
-st.video(
-    "https://platform.thinkific.com/videoproxy/v1/play/c80no3h69ueleahijou0",
-    format="video/mp4",
-)
+    )
+# st.video(
+#     "https://platform.thinkific.com/videoproxy/v1/play/c80no3h69ueleahijou0",
+#     format="video/mp4",
+# )
 
 with streamlit_analytics.track():
     st.text_input("Write something")

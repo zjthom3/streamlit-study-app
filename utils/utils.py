@@ -10,7 +10,9 @@ def generate_quiz(selected_option: str) -> None:
         with st.form(f"{selected_option} quiz", clear_on_submit=False):
             # iterate over each question and display it to the user
             for i, question in enumerate(SECTIONS[selected_option]["quiz_questions"]):
-                selected = st.radio(f"{i + 1}. {question['question']}", question["choices"])
+                selected = st.radio(
+                    f"{i + 1}. {question['question']}", question["choices"]
+                )
                 st.session_state[f"question_{i}"] = selected
 
             # add a submit button for the form
@@ -29,13 +31,14 @@ def generate_quiz(selected_option: str) -> None:
                     num_correct += 1
                 else:
                     st.write(question["explanation"])
-            # print the final score
+            # show the final score
             st.write(
                 f"Final score: {num_correct}/{len(SECTIONS[selected_option]['quiz_questions'])}"
             )
 
+
 # UNDER CONTRUCTION
-def generate_study_guide(selected_option):
+def generate_study_guide(selected_option: str) -> None:
     with st.expander("Study"):
         st.write(SECTIONS[selected_option]["study_resources"]["intro_text"])
         # with elements("study"):
@@ -50,7 +53,8 @@ def generate_study_guide(selected_option):
             width=670,
         )
 
-def generate_vocab_terms(selected_option):
+
+def generate_vocab_terms(selected_option: str) -> None:
     with st.expander("Vocabulary Terms"):
         for vocab in SECTIONS[selected_option]["vocabulary_terms"]:
             st.write(f"**_:green[{vocab['term']}]_**: {vocab['definition']}")

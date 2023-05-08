@@ -1,0 +1,21 @@
+cookie:
+  expiry_days: 30
+  key: random_signature_key
+  name: random_cookie_name
+credentials:
+  usernames:
+    adam:
+      email: adam.fisher@techsmart.codes
+      name: Adam Fisher
+      password: $2b$12$zhj0QN/GlNzoE30ieW0hfuMaQrVrrG71MQJJo0GnxGZSB/MJm9WO
+    jerel:
+      email: jerel.thomas@techsmart.codes
+      name: Jerel Thomas
+      password: $2b$12$XZIgwNI1zeFfUv1shDNe3.wJWtT8X3XWtH82zD8HXmh3pVZWIEHX.
+    test:
+      email: test@gmail.com
+      name: test
+      password: $2b$12$wEe5ySSg3BzHBCFk7fPNFOrc4n6BlKh.G/HmsU80ItDJ7/pzoylIS
+preauthorized:
+  emails:
+  - melsby@gmail.com

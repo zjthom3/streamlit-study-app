@@ -14,7 +14,6 @@ autoflake==2.1.1
 Automat==20.2.0
 autopep8==1.6.0
 bcrypt==4.0.1
-beautifulsoup4==4.12.2
 black==23.3.0
 blinker==1.6.2
 blis==0.7.9
@@ -41,10 +40,6 @@ distlib==0.3.6
 distro==1.8.0
 Django==4.0.1
 dnspython==2.3.0
-docker==6.0.1
-dropbox==11.36.0
-duckduckgo-search==2.9.2
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl#sha256=0964370218b7e1672a30ac50d72cdc6b16f7c867496f1d60925691188f4d2510
 entrypoints==0.4
 et-xmlfile==1.1.0
 exceptiongroup==1.1.1
@@ -180,7 +175,6 @@ streamlit==1.21.0
 streamlit-analytics==0.4.1
 streamlit-authenticator==0.2.1
 streamlit-elements==0.1.0
-TA-Lib==0.4.26
 thinc==8.1.10
 tiktoken==0.3.3
 toml==0.10.2
@@ -210,5 +204,4 @@ Werkzeug==2.0.3
 wrapt==1.15.0
 wsproto==1.0.0
 yarl==1.9.1
-yfinance==0.1.74
 zipp==3.11.0
